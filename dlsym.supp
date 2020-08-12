@@ -1,0 +1,19 @@
+{
+   _dlerror_run call to calloc.
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   ...
+   fun:calloc
+   fun:_dlerror_run
+   fun:dlsym
+   ...
+}
+{
+   libunwind's unw_step()'s msync validation.
+   Memcheck:Param
+   msync(start)
+   fun:msync
+   ...
+   fun:_ULx86_64_step
+   ...
+}
