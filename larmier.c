@@ -543,7 +543,7 @@ valgrind_argv_dump(char **valgrind_argv) {
 
     for (tmp = valgrind_argv; *tmp != NULL; tmp++) {
         POUT("'%s'", *tmp);
-        if (tmp+1 != NULL) {
+        if (*(tmp+1) != NULL) {
             POUT(" ");
         }
     }
