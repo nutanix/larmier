@@ -617,7 +617,7 @@ valgrind_argv_setup(const char *valgrind, const char *stubslib,
 
     // Fill in argv array with test-related entries.
     for (i = 0; i < argc; i++) {
-        VALG_ARGDUP(valg_args + i, argv[i]);
+        VALG_ARGDUP(valg_args + i, "%s", argv[i]);
     }
 
 #undef VALG_ARGS
