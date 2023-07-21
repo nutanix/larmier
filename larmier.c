@@ -543,7 +543,7 @@ valgrind_argv_dump(char **valgrind_argv) {
 
     for (tmp = valgrind_argv; *tmp != NULL; tmp++) {
         POUT("'%s'", *tmp);
-        if (tmp+1 != NULL) {
+        if (*(tmp+1) != NULL) {
             POUT(" ");
         }
     }
@@ -617,7 +617,7 @@ valgrind_argv_setup(const char *valgrind, const char *stubslib,
 
     // Fill in argv array with test-related entries.
     for (i = 0; i < argc; i++) {
-        VALG_ARGDUP(valg_args + i, argv[i]);
+        VALG_ARGDUP(valg_args + i, "%s", argv[i]);
     }
 
 #undef VALG_ARGS
